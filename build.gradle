@@ -9,7 +9,9 @@ repositories {
 
 dependencies {
 
+    compileOnly 'org.projectlombok:lombok:1.18.16'
     implementation 'io.appium:java-client:7.6.0'
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }

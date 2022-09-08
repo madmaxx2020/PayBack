@@ -20,6 +20,8 @@ public class AppiumDriverConfig {
         cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, PropertiesConfig.getProperty("platformVersion"));
         cap.setCapability(MobileCapabilityType.UDID, PropertiesConfig.getProperty("udid"));
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, PropertiesConfig.getProperty("AutomationName"));
+        cap.setCapability(MobileCapabilityType.APP, "D:\\from MACK-BOOK\\Projects\\PayBack\\src\\main\\resources\\PAYBACK_22.08.0900.apk");
+        cap.setCapability(MobileCapabilityType.FULL_RESET, true);
         cap.setCapability("appPackage", PropertiesConfig.getProperty("AppPackage"));
         cap.setCapability("appActivity", PropertiesConfig.getProperty("AppActivity"));
         return cap;
@@ -27,24 +29,24 @@ public class AppiumDriverConfig {
 
     public static AppiumDriver<MobileElement> getDriver() {
         if (driver == null) {
-            try {
-                driver = initAppiumDriver();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
+            driver = initAppiumDriver();
         }
         return driver;
     }
 
-    public static AppiumDriver<MobileElement> initAppiumDriver() throws MalformedURLException {
+    public static AppiumDriver<MobileElement> initAppiumDriver() {
         DesiredCapabilities androidCapabilities = setCapabilities();
-        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), androidCapabilities);
+        try {
+            driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), androidCapabilities);
+        } catch (MalformedURLException e){
+            e.printStackTrace();
+        }
         return driver;
     }
 
-    public static void quitDriver() {
+    public static void quiteApp() {
         if (driver != null) {
-            driver.quit();
+            driver.closeApp();
         }
     }
 }

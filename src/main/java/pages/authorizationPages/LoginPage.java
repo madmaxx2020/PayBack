@@ -10,14 +10,14 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(id = "de.payback.client.android:id/welcome_loginbutton")
     private MobileElement loginButton;
 
-    public boolean loginButtonDisplayed(){
-        return  element(loginButton).isDisplayed();
+    public boolean loginButtonDisplayed() {
+        return element(loginButton).isDisplayed();
     }
 
-    public LoginPage clickLoginButton() {
+    public void clickLoginButton() {
         element(loginButton).clickElement();
-        return new LoginPage(driver);
     }
+
     public LoginPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
