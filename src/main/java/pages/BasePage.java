@@ -14,8 +14,6 @@ public class BasePage {
     protected static AppiumDriver<MobileElement> driver;
     private Waiters waiters;
 
-    public BasePage(){
-    }
     public BasePage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(3)), this);
