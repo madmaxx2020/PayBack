@@ -20,7 +20,7 @@ public class AppiumDriverConfig {
         cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, PropertiesConfig.getProperty("platformVersion"));
         cap.setCapability(MobileCapabilityType.UDID, PropertiesConfig.getProperty("udid"));
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, PropertiesConfig.getProperty("AutomationName"));
-        cap.setCapability(MobileCapabilityType.APP, "D:\\from MACK-BOOK\\Projects\\PayBack\\src\\main\\resources\\PAYBACK_22.08.0900.apk");
+        cap.setCapability(MobileCapabilityType.APP, "D:\\Projects\\PayBack\\src\\main\\resources\\PAYBACK_22.08.0900.apk");
         cap.setCapability(MobileCapabilityType.FULL_RESET, true);
         cap.setCapability("appPackage", PropertiesConfig.getProperty("AppPackage"));
         cap.setCapability("appActivity", PropertiesConfig.getProperty("AppActivity"));

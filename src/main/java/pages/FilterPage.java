@@ -3,6 +3,7 @@ package pages;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.qameta.allure.Step;
 
 public class FilterPage extends BasePage {
 
@@ -18,20 +19,24 @@ public class FilterPage extends BasePage {
     @AndroidFindBy(id = "de.payback.client.android:id/activated_icon")
     private MobileElement successActivatedIcon;
 
+    @Step("Check success icon after activate coupon")
     public boolean successIconDisplayed() {
         return element(successActivatedIcon).isDisplayed();
     }
 
+    @Step("Activate coupon")
     public FilterPage clickOnActivateCouponButton() {
         element(activateCouponButton).clickElement();
         return new FilterPage(driver);
     }
 
+    @Step("Choose coupon")
     public FilterPage clickOnPartnerCoupon() {
         partner.click();
         return new FilterPage(driver);
     }
 
+    @Step("Check that Filter screen opened")
     public boolean titleFilterDisplayed() {
         return element(titleFilter).isDisplayed();
     }

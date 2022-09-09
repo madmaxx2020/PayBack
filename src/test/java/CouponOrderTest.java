@@ -1,10 +1,16 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@ExtendWith(TestListener.class)
 public class CouponOrderTest extends BaseTest {
 
     @Test
+    @Owner("Maksim")
+    @Description("Login-Choose Coupon-Activate Coupon")
     public void checkCouponOrder() {
 
         assertTrue(loginPage.loginButtonDisplayed(), "Application doesn't start");
@@ -27,6 +33,6 @@ public class CouponOrderTest extends BaseTest {
         filterPage
                 .clickOnPartnerCoupon()
                 .clickOnActivateCouponButton();
-        assertTrue(filterPage.successIconDisplayed());
+        assertTrue(filterPage.successIconDisplayed(), "Can't activate new coupon");
     }
 }

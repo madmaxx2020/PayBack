@@ -1,5 +1,4 @@
 import core.AppiumDriverConfig;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import pages.CouponsPage;
 import pages.FilterPage;
@@ -27,10 +26,5 @@ public class BaseTest {
         bottomToolbar = new BottomToolbar(AppiumDriverConfig.getDriver());
         couponsPage = new CouponsPage(AppiumDriverConfig.getDriver());
         filterPage = new FilterPage(AppiumDriverConfig.getDriver());
-    }
-
-    @AfterEach
-    public void tearDown() {
-        AppiumDriverConfig.quiteApp();
     }
 }
