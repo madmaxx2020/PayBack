@@ -18,13 +18,13 @@ public class CardNumberPage extends BasePage {
     @Step("Set exist card number")
     public CardNumberPage setCardNumber() {
         element(inputNumberField).inputValue(PropertiesConfig.getProperty("cardNumber"));
-        return new CardNumberPage(driver);
+        return this;
     }
 
     @Step("Confirm card number")
     public CardNumberPage clickConfirmButton() {
         element(confirmButton).clickElement();
-        return new CardNumberPage(driver);
+        return this;
     }
 
     public CardNumberPage(AppiumDriver<MobileElement> driver) {

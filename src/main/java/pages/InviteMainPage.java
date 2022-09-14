@@ -18,7 +18,7 @@ public class InviteMainPage extends BasePage {
     @Step("Hide invitation message")
     public InviteMainPage acceptInvitation() {
         inviteText.click();
-        return new InviteMainPage(driver);
+        return this;
     }
 
     public InviteMainPage(AppiumDriver<MobileElement> driver) {

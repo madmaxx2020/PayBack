@@ -24,7 +24,7 @@ public class PasswordPage extends BasePage {
     @Step("Confirm password")
     public PasswordPage clickPasswordOKButton() {
         element(passwordOKButton).clickElement();
-        return new PasswordPage(driver);
+        return this;
     }
 
     public PasswordPage(AppiumDriver<MobileElement> driver) {

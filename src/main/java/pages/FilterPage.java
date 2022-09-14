@@ -27,13 +27,13 @@ public class FilterPage extends BasePage {
     @Step("Activate coupon")
     public FilterPage clickOnActivateCouponButton() {
         element(activateCouponButton).clickElement();
-        return new FilterPage(driver);
+        return this;
     }
 
     @Step("Choose coupon")
     public FilterPage clickOnPartnerCoupon() {
         partner.click();
-        return new FilterPage(driver);
+        return this;
     }
 
     @Step("Check that Filter screen opened")
